@@ -1,0 +1,87 @@
+/* CSS For History Page */
+
+/* Global Vars */
+:root {
+    --table-border-color: rgb(220, 220, 220);
+    --table-border-color2: rgb(64, 64, 64);
+    --text-color: rgb(220, 220, 220);
+    --background-color: rgb(24, 24, 24);
+    --background-noise: url("assets/noise.png");
+}
+
+
+body {
+    background-image: var(--background-noise);
+    background-color: var(--background-color);
+    background-repeat: repeat;
+    /* Text Properties */
+    color: var(--text-color);
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
+
+.break-all {
+    word-break: break-all;
+    white-space: normal;
+}
+
+
+table, th, td {
+    border: 1px solid;
+    width: 100%;
+    padding: 8px;
+    /*text-align: left;*/
+    
+}
+
+/*tr:hover {
+    background-color: rgb(56, 56, 56);
+}*/
+
+tr:nth-child(even) {
+    background-image: var(--background-noise);
+    background-color: rgb(40, 40, 40);
+}
+
+
+div.outer {
+    position: relative;
+}
+
+div.history-container {
+    overflow: hidden;
+    white-space: nowrap;
+    /*position: absolute;
+    width: 100%;*/
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border-color: var(--table-border-color2);
+    border-width: 1px;
+    border-style: solid;
+}
+
+td {
+    border-color: var(--table-border-color2);
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: top;
+}
+
+/* hyperlinks */
+a:visited, a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: white;
+    text-decoration: underline;
+}
+
+

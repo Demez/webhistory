@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "WebHistory",
+  "version": "0.1",
+
+  "description": "Better Internet History Manager, based on Vivaldi's history browser",
+
+  "icons": {
+    "48": "icons/xanario_nosleep.png"
+  },
+
+  "permissions": [
+    "history",
+    "tabs",
+    "unlimitedStorage",
+    "storage",
+    "webNavigation"
+  ],
+
+  // Adds this extension as a button to the toolbar.
+  // Also allows background.js to use browser.browserAction
+  "browser_action": {
+    "default_icon": "icons/xanario_nosleep.png",
+    "default_title": "Demez History browser",
+    "browser_style": true
+  },
+
+  "background": {
+    // "page": "background.html"
+    "scripts": [
+      "js/background.js"
+    ]
+  }
+
+  // "content_scripts": [
+  //   {
+  //     "matches": [ "<all_urls>" ],
+  //     "js": [ "js/main.js" ]
+  //   }
+  // ]
+}
