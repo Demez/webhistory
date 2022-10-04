@@ -7,9 +7,19 @@ function FormatTime(s) {
 }
 
 
+// TODO:
+// - import button
+// - export button
+// - search box
+// - pages
+// - vivaldi style layout options
+
+
 function PopulateTable(tableElem, result) {
     // Clear the table contents before populating it with our new data
     tableElem.innerHTML = '';
+
+    const columnCount = 3;
 
     // create a header row
     const header = document.createElement('tr');
@@ -32,11 +42,36 @@ function PopulateTable(tableElem, result) {
 
         // NOTE: url is first because it breaks if it's not first due to the css
         // eventually look into how to fix this
-        row.innerHTML = `
-<td><a class="break-all" href="${record.url}" target="_blank">${record.url}</a></td>
-<td>${record.title}</td>
-<td>${FormatTime(record.date)}</td>
-`;
+        const temp = `
+        <td><a class="break-all" href="${record.url}" target="_blank">${record.url}</a></td>
+        <td>${record.title}</td>
+        <td>${FormatTime(record.date)}</td>
+        `;
+
+        var cell0 = row.insertCell(0);
+        cell0.innerHTML = `<a class="break-all" href="${record.url}" target="_blank">${record.url}</a>`;
+
+        var cell1 = row.insertCell(1);
+        cell1.innerHTML = record.title;
+
+        var cell2 = row.insertCell(2);
+        cell2.innerHTML = FormatTime(record.date);
+
+        const tableURL = '<td><a class="break-all" href="${record.url}" target="_blank">${record.url}</a></td>';
+        const tableTitle = '<td>${record.title}</td>';
+        const tableDate = '<td>${FormatTime(record.date)}</td>';
+
+        // const parser = new DOMParser()
+//
+        // const parsed = parser.parseFromString(tableURL, `text/html`)
+        // const tags = parsed.getElementsByTagName(`body`)
+
+        // row.innerHTML = ``
+        // row.innerHTML = ``
+        // for (const tag of tags) {
+        //     row.appendChild(tag)
+        // }
+
         tableElem.appendChild(row);
     }
 }

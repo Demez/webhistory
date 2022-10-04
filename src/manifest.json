@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "WebHistory",
+  "name": "DemezWebHistory",
   "version": "0.1",
 
   "description": "Better Internet History Manager, based on Vivaldi's history browser",
@@ -16,6 +16,13 @@
     "storage",
     "webNavigation"
   ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "demizexp@gmail.com",
+      "strict_min_version": "42.0"
+    }
+  },
 
   // Adds this extension as a button to the toolbar.
   // Also allows background.js to use browser.browserAction
